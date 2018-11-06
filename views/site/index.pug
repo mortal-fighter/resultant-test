@@ -4,5 +4,13 @@ html
 		include includes/head_common.pug
 		script(src="/js/index.js")
 	body
-		h1 Hello world
+		.content.col
+			.padder
+				h1 Hello world of stocks
+				#currency-container
+		.navigation.col
+			.padder
+				h1 Навигация
+				input#refresh-stocks(type="button", value="Обновить котировки")
+		
 

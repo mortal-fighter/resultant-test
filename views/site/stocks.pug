@@ -1,0 +1,18 @@
+table.transitionable
+	thead
+		tr
+			th Название
+			th Цена
+			th Количество
+	tbody
+		if locals.stocks.length
+			each item in locals.stocks
+				-
+					var amountRounded = (Math.round(item.price.amount * 100) / 100).toFixed(2);
+				tr
+					td= item.name
+					td= amountRounded + ' ' + item.price.currency
+					td= item.volume
+		else
+			tr
+				td(colspan="3") Нет данных
